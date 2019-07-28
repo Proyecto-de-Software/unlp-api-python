@@ -11,14 +11,17 @@ app.config.from_mapping(
     DATABASE=path.join("../db/db.sqlite"),
 )
 
-# Example using Blueprint
-app.register_blueprint(issue.bp)
+# Consultas
+app.add_url_rule("/consultas", 'issue_index', issue.index)
+app.add_url_rule("/consultas", 'issue_create', issue.create, methods=['POST'])
+app.add_url_rule("/consultas/new", 'issue_new', issue.new)
 
-# Example using methods
+# Usuarios
 app.add_url_rule("/usuarios", 'user_index', user.index)
 app.add_url_rule("/usuarios", 'user_create', user.create, methods=['POST'])
 app.add_url_rule("/usuarios/new", 'user_new', user.new)
 
+# Autenticación
 app.add_url_rule("/iniciar_sesion", 'auth_login', auth.login)
 app.add_url_rule(
     "/autenticacion",
@@ -27,7 +30,7 @@ app.add_url_rule(
     methods=['POST']
 )
 
-# Example on single file
+
 @app.route("/")
 def hello():
     return render_template('home.html')

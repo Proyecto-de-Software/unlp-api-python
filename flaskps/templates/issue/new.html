@@ -5,7 +5,7 @@
 {% endblock %}
 {% block content %}
   <h1>Crear una consulta</h1>
-  <form action="{{ url_for('issue.create') }}" method="POST">
+  <form action="{{ url_for('issue_create') }}" method="POST">
     <input name="email" placeholder="Correo"/>
     <textarea name="description" placeholder="Descripción"></textarea>
     <select name='category_id'>

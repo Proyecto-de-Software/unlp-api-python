@@ -19,5 +19,5 @@ def authenticate():
     session['user'] = user['email']
     flash("La sesión se inició correctamente.")
 
-    return redirect(url_for('issue.index'))
+    return redirect(url_for('issue_index'))
 
