@@ -1,8 +1,10 @@
 from os import getenv
 from importlib import import_module
 
+# Función para recuperar la configuración dependiendo del entorno
 def get_config():
   try:
+      # Entorno por defecto si no se especifica otro, development
       mode = getenv('FLASK_ENV', 'development')
       module = __name__ + "." + mode
       config = import_module(module)
