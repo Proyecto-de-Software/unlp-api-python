@@ -2,12 +2,12 @@ from os import path
 from flask import Flask, render_template, g
 from flaskps.db import init_db
 from flaskps.resources import issue
+from flaskps.config import get_config
 
-app = Flask(__name__, instance_relative_config=True)
-app.config.from_mapping(
-    SECRET_KEY='dev',
-    DATABASE=path.join('db/db.sqlite'),
-)
+config = get_config()
+
+app = Flask(__name__)
+app.config.from_object(config)
 
 app.register_blueprint(issue.bp)
 
