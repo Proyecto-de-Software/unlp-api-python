@@ -1,20 +1,22 @@
 class Issue(object):
 
-    def __init__(self, db):
-        self.db = db
+    db = None
 
-    def all(self):
+    @classmethod
+    def all(cls):
         sql = 'SELECT * FROM issues'
 
-        return self.db.execute(sql).fetchall()
+        return cls.db.execute(sql).fetchall()
 
-    def create(self, data):
+    @classmethod
+    def create(cls, data):
         sql = """
             INSERT INTO issues (email, description, category_id, status_id)
             VALUES (:email, :description, :category_id, :status_id)
         """
 
-        self.db.execute(sql, data)
-        self.db.commit()
+        cls.db.execute(sql, data)
+        cls.db.commit()
 
         return True
+

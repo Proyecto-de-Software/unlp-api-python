@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+{% block title %}Login{% endblock %}
+{% block head %}
+  {{ super() }}
+{% endblock %}
+{% block content %}
+  <h1>Iniciar sesión</h1>
+  <form action="{{ url_for('auth_authenticate') }}" method="POST">
+    <input name="email" placeholder="Correo"/>
+    <input name="password" placeholder="Clave"/>
+    <input type="submit" value="Login">
+  </form>
+{% endblock %}

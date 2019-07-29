@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+{% block title %}Usuarios{% endblock %}
+{% block head %}
+  {{ super() }}
+{% endblock %}
+{% block content %}
+  <h1>Crear un usuario</h1>
+  <form action="{{ url_for('user_create') }}" method="POST">
+    <input name="email" placeholder="Correo"/>
+    <input name="password" placeholder="Clave"/>
+    <input name="first_name" placeholder="Nombre"/>
+    <input name="last_name" placeholder="Apellido"/>
+    <input type="submit" value="Crear">
+  </form>
+{% endblock %}
