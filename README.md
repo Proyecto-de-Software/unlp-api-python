@@ -15,7 +15,7 @@ $ . venv/bin/activate
 # Instalar las dependencias dentro del entorno virtual
 $ pip install -u requirements.txt
 # En el directorio raiz
-$ python app.py
+$ FLAS_EN=dev python run.py
 ```
 
 Para salir del entorno virutal, ejecutar:
@@ -27,5 +27,6 @@ $ deactivate
 TODO
 ----
 
-- [ ] Definir como levantar el entorno con distintos ambientes (dev y prod) - Fede
-- [ ] Definir de forma correcta un layout y toda la estructura de carpetas - Lucas
+- [ ] Retornar json para ejemplo de api rest.
+- [ ] Mejorar el modulo de configuración. Tal vez sea mejor una clase que una función.
+- [ ] Usar una hoja de estilos simple para que quede de ejemplo.
