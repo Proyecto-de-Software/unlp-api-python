@@ -18,4 +18,3 @@ def create():
     User.db = get_db()
     User.create(request.form)
     return redirect(url_for('user_index'))
-

@@ -19,4 +19,3 @@ def create():
     Issue.create(request.form)
 
     return redirect(url_for('issue_index'))
-

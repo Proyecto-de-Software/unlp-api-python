@@ -5,17 +5,20 @@ class User(object):
     @classmethod
     def all(cls):
         sql = 'SELECT * FROM users'
+        cursor = cls.db.cursor()
+        cursor.execute(sql)
 
-        return cls.db.execute(sql).fetchall()
+        return cursor.fetchall()
 
     @classmethod
     def create(cls, data):
         sql = """
             INSERT INTO users (email, password, first_name, last_name)
-            VALUES (:email, :password, :first_name, :last_name)
+            VALUES (%s, %s, %s, %s)
         """
 
-        cls.db.execute(sql, data)
+        cursor = cls.db.cursor()
+        cursor.execute(sql, data)
         cls.db.commit()
 
         return True
@@ -24,7 +27,10 @@ class User(object):
     def find_by_email_and_pass(cls, email, password):
         sql = """
             SELECT * FROM users AS u
-            WHERE u.email = :email AND u.password = :password
+            WHERE u.email = %s AND u.password = %s
         """
-        return cls.db.execute(sql, (email, password)).fetchone()
 
+        cursor = cls.db.cursor()
+        cursor.execute(sql, (email, password))
+
+        return cursor.fetchone()

@@ -1,16 +1,19 @@
-import sqlite3
+import pymysql
 
 from flask import current_app, g
 from flask.cli import with_appcontext
+from flaskps.config import get_config
 
 
 def get_db():
     if 'db' not in g:
-        g.db = sqlite3.connect(
-            '/home/fedeotaran/Documents/code/py_layout/db/db.sqlite',
-            detect_types=sqlite3.PARSE_DECLTYPES
+        g.db = pymysql.connect(
+            host=get_config().DB_HOST,
+            user=get_config().DB_USER,
+            password=get_config().DB_PASS,
+            db=get_config().DB_NAME,
+            cursorclass=pymysql.cursors.DictCursor
         )
-        g.db.row_factory = sqlite3.Row
 
     return g.db
 
@@ -20,11 +23,3 @@ def close_db(e=None):
 
     if db is not None:
         db.close()
-
-
-def init_db():
-    db = get_db()
-
-    with current_app.open_resource('/home/fedeotaran/Documents/code/py_layout/db/schema.sql') as f:
-        db.executescript(f.read().decode('utf8'))
-

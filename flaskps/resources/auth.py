@@ -20,4 +20,3 @@ def authenticate():
     flash("La sesión se inició correctamente.")
 
     return redirect(url_for('issue_index'))
-

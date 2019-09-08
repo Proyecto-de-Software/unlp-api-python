@@ -1,6 +1,5 @@
 from os import path
 from flask import Flask, render_template, g
-from flaskps.db import init_db
 from flaskps.resources import issue
 from flaskps.config import get_config
 from flaskps.resources import user
@@ -35,12 +34,3 @@ app.add_url_rule(
 @app.route("/")
 def hello():
     return render_template('home.html')
-
-
-@app.cli.command('initdb')
-def initdb_command():
-    print("Init db start!")
-    init_db()
-    print("Init db done!")
-
-
