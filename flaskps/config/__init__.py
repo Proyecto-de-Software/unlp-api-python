@@ -13,3 +13,5 @@ def get_config():
   except ModuleNotFoundError:
       print(f"Configuration {module} is missing")
       exit(1)
+
+Config = get_config()

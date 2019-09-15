@@ -1,5 +1,4 @@
 SECRET_KEY = "dev"
-DATABASE = "db/db.sqlite"
 DEBUG = True
 DB_HOST = 'localhost'
 DB_USER = 'root'

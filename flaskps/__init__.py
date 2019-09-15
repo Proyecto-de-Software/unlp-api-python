@@ -1,15 +1,13 @@
 from os import path
 from flask import Flask, render_template, g
 from flaskps.resources import issue
-from flaskps.config import get_config
 from flaskps.resources import user
 from flaskps.resources import auth
-
-config = get_config()
+from flaskps.config import Config
 
 # Configuración inicial de la app
 app = Flask(__name__)
-app.config.from_object(config)
+app.config.from_object(Config)
 
 # Consultas
 app.add_url_rule("/consultas", 'issue_index', issue.index)

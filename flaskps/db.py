@@ -2,16 +2,16 @@ import pymysql
 
 from flask import current_app, g
 from flask.cli import with_appcontext
-from flaskps.config import get_config
+from flaskps.config import Config
 
 
 def get_db():
     if 'db' not in g:
         g.db = pymysql.connect(
-            host=get_config().DB_HOST,
-            user=get_config().DB_USER,
-            password=get_config().DB_PASS,
-            db=get_config().DB_NAME,
+            host=Config.DB_HOST,
+            user=Config.DB_USER,
+            password=Config.DB_PASS,
+            db=Config.DB_NAME,
             cursorclass=pymysql.cursors.DictCursor
         )
 
