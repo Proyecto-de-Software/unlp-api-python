@@ -1,5 +1,6 @@
-# proyecto2018-unlp-api-python
-Demo de uso de python con frontend Vue
+# Proyecto 2018 aplicación de ejemplo
+
+Aplicación de ejemplo para la cátedra de Proyecto de Software de la UNLP.
 
 ## Iniciar ambiente
 
@@ -7,6 +8,8 @@ Demo de uso de python con frontend Vue
 
 - python3
 - virtualenv
+
+### Ejecución
 
 ```bash
 $ virtualenv -p python3 venv
@@ -24,9 +27,18 @@ Para salir del entorno virutal, ejecutar:
 $ deactivate
 ```
 
-TODO
-----
+## Estructura de carpetas del proyecto
 
-- [ ] Retornar json para ejemplo de api rest.
-- [ ] Mejorar el modulo de configuración. Tal vez sea mejor una clase que una función.
+```bash
+config            # Módulo de donde se obtienen las variables de configuración
+helpers           # Módulo donde se colocan funciones auxiliares para varias partes del código
+models            # Módulo con la lógica de negocio de la aplicación y la conexión a la base de datos
+resources         # Módulo con los controladores de la aplicación (parte web)
+templates         # Módulo con los templates
+db.py             # Instancia de base de datos
+__init__.py       # Instancia de la aplicación y ruteo
+```
+
+## TODO
+
 - [ ] Usar una hoja de estilos simple para que quede de ejemplo.
