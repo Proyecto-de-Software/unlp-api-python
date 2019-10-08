@@ -16,9 +16,9 @@ $ virtualenv -p python3 venv
 # Para iniciar el entorno virtual
 $ . venv/bin/activate
 # Instalar las dependencias dentro del entorno virtual
-$ pip install -u requirements.txt
+$ pip install -r requirements.txt
 # En el directorio raiz
-$ FLAS_EN=dev python run.py
+$ FLASK_ENV=development python run.py
 ```
 
 Para salir del entorno virutal, ejecutar:
