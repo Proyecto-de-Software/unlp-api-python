@@ -1,6 +1,6 @@
-# Proyecto 2018 aplicación de ejemplo
+# Proyecto de Software - Aplicación de ejemplo
 
-Aplicación de ejemplo para la cátedra de Proyecto de Software de la UNLP.
+Aplicación de ejemplo para la cátedra de Proyecto de Software de la Facultad de Informática de la U.N.L.P.
 
 ## Iniciar ambiente
 
