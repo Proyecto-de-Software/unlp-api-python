@@ -18,7 +18,7 @@ class User(object):
         """
 
         cursor = cls.db.cursor()
-        cursor.execute(sql, data)
+        cursor.execute(sql, list(data.values()))
         cls.db.commit()
 
         return True
