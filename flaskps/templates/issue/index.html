@@ -8,4 +8,6 @@
   {% for issue in issues %}
     <li>{{ issue.email }} - {{ issue.description }} - {{ issue.category_id }} - {{ issue.status_id }}</li>
   {% endfor %}
+  <a href="{{ url_for('home') }}" class="link">Volver</a>
+  <a href="{{ url_for('issue_new') }}" class="link">Nuevo</a>
 {% endblock %}

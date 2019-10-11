@@ -6,14 +6,33 @@
 {% block content %}
   <h1>Crear una consulta</h1>
   <form action="{{ url_for('issue_create') }}" method="POST">
-    <input name="email" placeholder="Correo"/>
-    <textarea name="description" placeholder="Descripción"></textarea>
-    <select name='category_id'>
-      <option value='1'>uno</option>
-    </select>
-    <select name='status_id'>
-      <option value='1'>uno</option>
-    </select>
-    <input type="submit" value="Crear">
+    <p>
+      <label>Email<label></br>
+      <input name="email" placeholder="Correo"/>
+    </p>
+    <p>
+      <label>Description<label></br>
+      <textarea name="description" placeholder="Descripción"></textarea>
+    </p>
+    <p>
+      <label>Categiría<label></br>
+      <select name='category_id'>
+        <option value='1'>Bug</option>
+        <option value='2'>Question</option>
+      </select>
+    </p>
+    <p>
+      <label>Estado<label></br>
+      <select name='status_id'>
+        <option value='1'>New</option>
+        <option value='2'>Todo</option>
+        <option value='3'>In Progress</option>
+      </select>
+    </p>
+    <p>
+      <input type="submit" value="Crear">
+      <button type="reset">Limpiar</button>
+    </p>
   </form>
+  <a href="{{ url_for('issue_index') }}" class="link">Volver</a>
 {% endblock %}

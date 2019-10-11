@@ -74,7 +74,7 @@ CREATE TABLE `issues` (
 
 LOCK TABLES `issues` WRITE;
 /*!40000 ALTER TABLE `issues` DISABLE KEYS */;
-INSERT INTO `issues` VALUES (1,'fede@mail.com','Descripcion...',1,1),(2,'fede@mail.com','Otro mas',1,2),(4,'a@mail.com','aaaaaaaaa',1,1);
+INSERT INTO `issues` VALUES (1,'fede@mail.com','No puedo iniciar sesión correctamente',1,1),(2,'jose@mail.com','El sistema de dice que hay un error',1,2),(4,'maria@mail.com','No tengo acceso al sistema',1,1);
 /*!40000 ALTER TABLE `issues` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -129,7 +129,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'fede','fede','fede','fede');
+INSERT INTO `users` VALUES (1,'admin','123123','Cosme','Fulanito');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

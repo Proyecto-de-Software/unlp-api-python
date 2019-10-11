@@ -6,14 +6,6 @@ body {
   font-size: 14px;
 }
 
-a img {
-  border: none;
-}
-
-a {
-  color: #0000FF;
-}
-
 .clear {
   clear: both;
   height: 0;
@@ -34,4 +26,20 @@ a {
   border: solid 1px black;
   margin-top: 20px;
   min-height: 400px;
+}
+
+a.link {
+  text-transform: uppercase;
+  font-size: 10px;
+  background-color: #92a4ad;
+  padding: 10px 15px;
+  border-radius: 0;
+  color: #416475;
+  display: inline-block;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  line-height: 1.5;
+  text-decoration: none;
+  margin-top: 50px;
+  letter-spacing: 1px;
 }

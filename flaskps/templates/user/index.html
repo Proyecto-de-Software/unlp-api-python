@@ -8,4 +8,6 @@
   {% for user in users %}
   <li>{{ user.email }} - {{ user.first_name }} - {{ user.last_name }} - {{ user.password }}</li>
   {% endfor %}
+  <a href="{{ url_for('home') }}" class="link">Volver</a>
+  <a href="{{ url_for('user_new') }}" class="link">Nuevo</a>
 {% endblock %}
