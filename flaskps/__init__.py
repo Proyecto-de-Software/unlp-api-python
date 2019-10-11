@@ -5,6 +5,7 @@ from flaskps.resources import user
 from flaskps.resources import auth
 from flaskps.resources.api import issue as api_issue
 from flaskps.config import Config
+from flaskps.helpers import handler
 
 # Configuración inicial de la app
 app = Flask(__name__)
@@ -35,5 +36,9 @@ app.add_url_rule("/api/consultas", 'api_issue_index', api_issue.index)
 
 
 @app.route("/")
-def hello():
+def home():
     return render_template('home.html')
+
+# Handlers
+app.register_error_handler(404, handler.not_found_error)
+# Implementar lo mismo para el error 500 y 401
