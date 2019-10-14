@@ -25,6 +25,7 @@ def authenticate():
 
 def logout():
     del session['user']
+    session.clear()
     flash("La sesión se cerró correctamente.")
 
     return redirect(url_for('auth_login'))
