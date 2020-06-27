@@ -1,7 +1,7 @@
 from flask import redirect, render_template, request, url_for, session, abort
-from flaskps.db import get_db
-from flaskps.models.user import User
-from flaskps.helpers.auth import authenticated
+from my_app.db import get_db
+from my_app.models.user import User
+from my_app.helpers.auth import authenticated
 
 
 def index():

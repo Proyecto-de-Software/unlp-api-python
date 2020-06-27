@@ -1,13 +1,13 @@
 from os import path
 from flask import Flask, render_template, g
 from flask_session import Session
-from flaskps.resources import issue
-from flaskps.resources import user
-from flaskps.resources import auth
-from flaskps.resources.api import issue as api_issue
-from flaskps.config import Config
-from flaskps.helpers import handler
-from flaskps.helpers import auth as helper_auth
+from my_app.resources import issue
+from my_app.resources import user
+from my_app.resources import auth
+from my_app.resources.api import issue as api_issue
+from my_app.config import Config
+from my_app.helpers import handler
+from my_app.helpers import auth as helper_auth
 
 # Configuración inicial de la app
 app = Flask(__name__)

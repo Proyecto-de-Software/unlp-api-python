@@ -1,6 +1,6 @@
 from flask import jsonify
-from flaskps.db import get_db
-from flaskps.models.issue import Issue
+from my_app.db import get_db
+from my_app.models.issue import Issue
 
 
 def index():

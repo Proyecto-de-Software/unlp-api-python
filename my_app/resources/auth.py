@@ -1,6 +1,6 @@
 from flask import redirect, render_template, request, url_for, abort, session, flash
-from flaskps.db import get_db
-from flaskps.models.user import User
+from my_app.db import get_db
+from my_app.models.user import User
 
 
 def login():
