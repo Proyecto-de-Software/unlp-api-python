@@ -4,28 +4,28 @@ from app.models.user import User
 
 
 def login():
-    return render_template('auth/login.html')
+    return render_template("auth/login.html")
 
 
 def authenticate():
     conn = connection()
     params = request.form
 
-    user = User.find_by_email_and_pass(conn, params['email'], params['password'])
+    user = User.find_by_email_and_pass(conn, params["email"], params["password"])
 
     if not user:
         flash("Usuario o clave incorrecto.")
-        return redirect(url_for('auth_login'))
+        return redirect(url_for("auth_login"))
 
-    session['user'] = user['email']
+    session["user"] = user["email"]
     flash("La sesión se inició correctamente.")
 
-    return redirect(url_for('home'))
+    return redirect(url_for("home"))
 
 
 def logout():
-    del session['user']
+    del session["user"]
     session.clear()
     flash("La sesión se cerró correctamente.")
 
-    return redirect(url_for('auth_login'))
+    return redirect(url_for("auth_login"))

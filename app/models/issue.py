@@ -1,5 +1,4 @@
 class Issue(object):
-
     @classmethod
     def all(cls, conn):
         sql = "SELECT * FROM issues"

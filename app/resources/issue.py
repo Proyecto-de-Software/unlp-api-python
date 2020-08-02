@@ -7,15 +7,15 @@ def index():
     conn = connection()
     issues = Issue.all(conn)
 
-    return render_template('issue/index.html', issues=issues)
+    return render_template("issue/index.html", issues=issues)
 
 
 def new():
-    return render_template('issue/new.html')
+    return render_template("issue/new.html")
 
 
 def create():
     conn = connection()
     Issue.create(conn, request.form)
 
-    return redirect(url_for('issue_index'))
+    return redirect(url_for("issue_index"))

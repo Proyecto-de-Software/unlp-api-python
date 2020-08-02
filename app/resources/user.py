@@ -11,14 +11,14 @@ def index():
     conn = connection()
     users = User.all(conn)
 
-    return render_template('user/index.html', users=users)
+    return render_template("user/index.html", users=users)
 
 
 def new():
     if not authenticated(session):
         abort(401)
 
-    return render_template('user/new.html')
+    return render_template("user/new.html")
 
 
 def create():
@@ -27,4 +27,4 @@ def create():
 
     conn = connection()
     User.create(conn, request.form)
-    return redirect(url_for('user_index'))
+    return redirect(url_for("user_index"))

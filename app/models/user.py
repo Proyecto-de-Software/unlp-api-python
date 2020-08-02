@@ -1,8 +1,7 @@
 class User(object):
-
     @classmethod
     def all(cls, conn):
-        sql = 'SELECT * FROM users'
+        sql = "SELECT * FROM users"
         cursor = conn.cursor()
         cursor.execute(sql)
 
