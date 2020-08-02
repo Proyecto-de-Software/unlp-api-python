@@ -1,11 +1,12 @@
 from os import path, environ
 from flask import Flask, render_template, g
 from flask_session import Session
+from config import config
+from app import db
 from app.resources import issue
 from app.resources import user
 from app.resources import auth
 from app.resources.api import issue as api_issue
-from config import config
 from app.helpers import handler
 from app.helpers import auth as helper_auth
 
@@ -21,6 +22,9 @@ def create_app(environment="development"):
     # Server Side session
     app.config['SESSION_TYPE'] = 'filesystem'
     Session(app)
+
+    # Configure db
+    db.init_app(app)
 
     # Funciones que se exportan al contexto de Jinja2
     app.jinja_env.globals.update(is_authenticated=helper_auth.authenticated)
