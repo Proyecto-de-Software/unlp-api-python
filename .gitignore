@@ -109,3 +109,4 @@ db/db.sqlite
 flask_session
 .vim
 coc-settings.json
+.vscode
